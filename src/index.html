@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas-project</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="content">
+        <div class="begining">
+            <header class="header">
+                <div class="header-box">
+                    <h1 class="header-caption">Draw everything...<span class="small-caption">if you are allowed by JS</span></h1>
+                </div>
+            </header>
+        </div>
+
+        <div class="canvas-drawer">
+            <section class="canvas-element">
+                <div class="canvas-control-box">
+                    <label class="label-control">
+                        <input class="canvas-checkbox cursor-point" type="radio" name="btn-canvas-control" data-control="new"checked>
+                        <span class="text-btn">Select new object</span>
+                    </label>
+                    <label class="label-control">
+                        <input class="canvas-checkbox pencil" type="radio" name="btn-canvas-control" data-control="pencil">
+                        <span class="text-btn">Draw with pencil</span>
+                    </label>
+                    <label class="label-control">
+                        <input class="canvas-checkbox rectangle" type="radio" name="btn-canvas-control" data-control="rectangle">
+                        <span class="text-btn">Draw rectangle</span>
+                    </label>
+                    <label class="label-control">
+                        <input class="canvas-checkbox circle" type="radio" name="btn-canvas-control" data-control="circle">
+                        <span class="text-btn">Draw circle</span>
+                    </label>
+                    <label class="label-control label-colors">
+                        <input class="canvas-checkbox colors" id="colors" type="color" value="#555555">
+                        <span class="text-btn">Choose color</span>
+                    </label>
+                    <button type="button" class="canvas-control remove" id="remove"><span class="text-btn">Remove</span>
+                    </button>
+                </div>
+                <div class="canvas-drawer-box">
+                    <canvas class="drawer" id="canvas" width="856" height="370"><img src="images/picture-alt-canvas.jpg" alt=""></canvas>
+                </div>
+            </section>
+
+            <section class="btns-download">
+                <button type="button" class="importJSON download-btn" id="importJSON">Import JSON</button>
+                <button type="button" class="exportJSON download-btn" id="exportJSON">Export JSON</button>
+                <button type="button" class="dwlSPG download-btn" id="savingAsPng">Download as PNG</button>
+                <button type="button" class="dwlSVG download-btn"id="savingAsSvg">Download as SVG</button>
+            </section>
+            <section class="textarea-box">
+                <textarea class="textarea-field" placeholder="<JSON_DATA>"></textarea>
+            </section>
+        </div>
+        <footer class="footer">
+            © 2022 all rights reserved
+        </footer>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

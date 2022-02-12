@@ -1,0 +1,310 @@
+*,
+::after, 
+::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: start;
+    align-items: center;
+
+    background-color: #EAEAEA;
+}
+
+.begining {
+    width: 100%;
+    position: relative;
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    background-color: rgb(0, 0, 0);
+   background-image: url(images/picture-header.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.header::after {
+    content: "";
+    background-color: #000000;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    opacity: 0.55;
+    z-index: 1;
+}
+
+.header-box {
+    margin: 3em auto;
+}
+
+.header-caption {
+    position: relative;
+    z-index: 10;
+
+    color: #ffffff;
+    font-size: 2em;
+}
+
+.small-caption {
+    font-size: 0.2em;
+}
+
+.canvas-drawer {
+    margin: 1rem auto;
+    padding: 1rem 0.5rem;
+
+    border-radius: 5px;
+    box-shadow: 1px 4px 12px 4px rgba(34, 60, 80, 0.24);
+    background-color: #ffffff;
+}
+
+.canvas-control-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.canvas-control {
+    position: relative;
+    display: inline-block;
+    margin: 0.5rem;
+    width: 3.5rem;
+    height: 3.1rem;
+
+    background-color: #08D9D6;
+    
+    cursor: pointer;
+  }
+
+.label-control  {
+    position: relative;
+    display: inline-block;
+    margin: 0.5rem;
+    width: 3.5rem;
+    height: 3.1rem;
+    z-index: 0;
+
+    background-color: #08D9D6;
+    
+    cursor: pointer;
+  }
+
+.canvas-checkbox:hover::before {
+    /* filter: invert(0.8); */
+    box-shadow: inset -2px 2px 4px #ffffff;
+  }
+
+.canvas-checkbox:checked::before {
+    background-color: #00ce98;
+}
+
+.canvas-checkbox {
+    position: absolute;
+
+    height: 1px;
+    width: 1px;
+
+    z-index: 10;
+}
+
+.canvas-checkbox::before {
+    content: "";
+    position: absolute;
+    width: 3.5rem;
+    height: 3.1rem;
+    z-index: 10;
+
+    box-shadow: 2px -2px 4px #97adad;
+    border-style: none;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+.cursor-point::before { 
+    filter: invert(1);
+    background-size: 1.3rem; 
+    background-image: url('images/mouse-pointer-solid.svg');
+  }
+
+.pencil::before {
+    filter: invert(1);
+    background-size: 1.5rem;   
+    background-image: url('images/pencil-alt-solid.svg');
+}
+
+.rectangle::before {
+    filter: invert(1);
+    background-size: 1.5rem;   
+    background-image: url('images/file-invoice-solid.svg');
+}
+
+.circle::before {
+    filter: invert(1);
+    background-size: 2rem;   
+    background-image: url('images/circle-solid.svg');
+}
+
+.colors {
+    border: none;
+}
+
+.colors::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    border-style: none;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+.colors::before {
+    filter: invert(1);
+    background-size: 2rem;   
+    background-image: url('images/palette-solid.svg');
+}
+
+.remove::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    border-style: none;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.remove::after {
+    filter: invert(1);
+    background-size: 2rem;   
+    background-image: url('images/trash-alt-solid.svg');
+}
+
+.canvas-control:first-child {
+    margin-top: 1rem;
+}
+
+.img-btn-control {
+    display: block;
+    width: 3rem;
+    height: 3rem;
+    
+}
+
+.text-btn {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+  } 
+
+.canvas-element {
+    display: flex;
+    width: 100%;
+    max-width: 60em;
+}
+
+.canvas-drawer-box {
+    margin: 0.5rem;
+    width: 100%;
+}
+
+.drawer {
+    display: block;
+    width: 856px;
+    height: 370px;
+
+    border:rgba(8, 217, 214, 0.7) 1px solid;
+    border-radius: 0.5rem;
+}
+
+.btns-download {
+    width: 100%;
+    display: flex;
+    margin-left: 5.5rem;
+}
+
+.download-btn {
+    padding: 0.5rem 1rem;
+    margin-right: 1rem;
+
+    border:none;
+    border-radius: 0.5rem;
+    /* background-color: #252A34; */
+    box-shadow: 2px -2px 4px #7e8e91;
+    /* filter: drop-shadow(2px -2px 3px rgba(126, 142, 145, 1)); */
+    
+    color: #000000;
+    font-family: inherit;
+
+    cursor: pointer;
+}
+
+.download-btn:hover {
+    font-weight: bold;
+    box-shadow: inset -2px 2px 4px #7e8e91;
+    /* filter: drop-shadow(-2px 2px 5px rgba(126, 142, 145, 1)); */
+}
+
+.textarea-box {
+    margin-top: 1rem;
+    margin-left: 5rem;
+}
+
+.textarea-field {
+    width: 53.5rem;
+    max-width: 53.5rem;
+    min-width: 53.5rem;
+    height: 7rem;
+    padding: 0.5rem 1rem;
+    border: rgba(8, 217, 214, 0.7) 1px solid;
+    border-radius: 0.5rem;
+}
+
+.textarea-field:focus {
+    outline-color: #FF2E63;
+}
+
+footer {
+    height: 3rem;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    background-color:#252A34;
+    color: #EAEAEA;
+    font-size: 0.9rem;
+}
