@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "keywords": [],
-  "author": "ArturJS",
+  "author": "Lu-el",
   "license": "MIT",
   "scripts": {
     "dev": "webpack serve --static --open --mode development",
@@ -21,6 +21,7 @@
     "css-loader": "^6.3.0",
     "eslint": "^8.6.0",
     "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^16.1.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-prettier": "^4.0.0",
