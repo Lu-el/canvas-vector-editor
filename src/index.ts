@@ -1,8 +1,8 @@
-import { sayHello } from './utils';
+import { createCanvasVectorEditor } from './CanvasVectorEditor';
 import './styles.scss';
 
 function main() {
-    sayHello();
+    createCanvasVectorEditor();
 }
 
 main();
