@@ -10,7 +10,9 @@
     "dev": "webpack serve --static --open --mode development",
     "build": "webpack --mode production",
     "lint": "eslint -c .eslintrc.js src/**/*.{ts,js}",
-    "lint-fix": "eslint -c .eslintrc.js src/**/*.{ts,js} --fix"
+    "lint-fix": "eslint -c .eslintrc.js src/**/*.{ts,js} --fix",
+    "format": "prettier --write ./src",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.9.1",
