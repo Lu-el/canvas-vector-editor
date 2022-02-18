@@ -39,13 +39,27 @@ export class Rectangle extends Shape {
 
     isPointWithin(x: number, y: number): boolean {
         let perpen: number;
-        for (let i = 0; i < this.coords.length - 3; i += 2) {
+        const { coords } = this;
+        const coordsPoints: Array<number> = [];
+        coordsPoints.push(
+            coords[0],
+            coords[1],
+            coords[2],
+            coords[1],
+            coords[2],
+            coords[3],
+            coords[0],
+            coords[3],
+            coords[0],
+            coords[1]
+        );
+        for (let i = 0; i < coordsPoints.length - 3; i += 2) {
             const coordsLine: Array<number> = [];
             coordsLine.push(
-                this.coords[i],
-                this.coords[i + 1],
-                this.coords[i + 2],
-                this.coords[i + 3]
+                coordsPoints[i],
+                coordsPoints[i + 1],
+                coordsPoints[i + 2],
+                coordsPoints[i + 3]
             );
             const a = Math.sqrt(
                 (coordsLine[2] - coordsLine[0]) ** 2 +
