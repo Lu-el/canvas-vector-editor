@@ -4,7 +4,7 @@ export class Circle extends Shape {
     figure = 'Circle';
 
     constructor(
-        public ctx: any,
+        public ctx: CanvasRenderingContext2D,
         public color: string,
         public coords: Array<number>
     ) {
@@ -27,7 +27,13 @@ export class Circle extends Shape {
         }
     }
 
-    drawShape(ctx: any, x: number, y: number, x1: number, y1: number): void {
+    drawShape(
+        ctx: CanvasRenderingContext2D,
+        x: number,
+        y: number,
+        x1: number,
+        y1: number
+    ): void {
         const radius = Math.sqrt((x1 - x) ** 2 + (y1 - y) ** 2);
         ctx.strokeStyle = this.color;
         ctx.beginPath();
@@ -36,21 +42,18 @@ export class Circle extends Shape {
     }
 
     isPointWithin(x: number, y: number): boolean {
-        const t: number = 10;
-        if (
-            Math.abs(
-                Math.sqrt(
-                    (x - this.coords[0]) ** 2 + (y - this.coords[1]) ** 2
-                ) -
-                    Math.sqrt(
-                        (this.coords[2] - this.coords[0]) ** 2 +
-                            (this.coords[3] - this.coords[1]) ** 2
-                    )
-            ) <= t
-        ) {
-            return true;
-        }
-        return false;
+        const clickableZone: number = 10;
+        const radiusFromCentertoCursor: number = Math.sqrt(
+            (x - this.coords[0]) ** 2 + (y - this.coords[1]) ** 2
+        );
+        const radiusOfCircle: number = Math.sqrt(
+            (this.coords[2] - this.coords[0]) ** 2 +
+                (this.coords[3] - this.coords[1]) ** 2
+        );
+
+        return (
+            Math.abs(radiusFromCentertoCursor - radiusOfCircle) <= clickableZone
+        );
     }
 
     moveShape(dx: number, dy: number): void {

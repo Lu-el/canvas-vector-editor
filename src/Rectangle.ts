@@ -4,7 +4,7 @@ export class Rectangle extends Shape {
     figure = 'Rectangle';
 
     constructor(
-        public ctx: any,
+        public ctx: CanvasRenderingContext2D,
         public color: string,
         public coords: Array<number>
     ) {
@@ -27,7 +27,13 @@ export class Rectangle extends Shape {
         }
     }
 
-    drawShape(ctx: any, x: number, y: number, x1: number, y1: number): void {
+    drawShape(
+        ctx: CanvasRenderingContext2D,
+        x: number,
+        y: number,
+        x1: number,
+        y1: number
+    ): void {
         const width = x1 - x;
         const height = y1 - y;
         ctx.beginPath();
@@ -54,13 +60,7 @@ export class Rectangle extends Shape {
             coords[1]
         );
         for (let i = 0; i < coordsPoints.length - 3; i += 2) {
-            const coordsLine: Array<number> = [];
-            coordsLine.push(
-                coordsPoints[i],
-                coordsPoints[i + 1],
-                coordsPoints[i + 2],
-                coordsPoints[i + 3]
-            );
+            const coordsLine: Array<number> = coordsPoints.slice(i, i + 4);
             const a = Math.sqrt(
                 (coordsLine[2] - coordsLine[0]) ** 2 +
                     (coordsLine[3] - coordsLine[1]) ** 2

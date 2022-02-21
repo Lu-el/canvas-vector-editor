@@ -4,7 +4,7 @@ export class BrokenLine extends Shape {
     figure = 'BrokenLine';
 
     constructor(
-        public ctx: any,
+        public ctx: CanvasRenderingContext2D,
         public color: string,
         public coords: Array<number>
     ) {
@@ -27,7 +27,13 @@ export class BrokenLine extends Shape {
         }
     }
 
-    drawShape(ctx: any, x: number, y: number, x1: number, y1: number): void {
+    drawShape(
+        ctx: CanvasRenderingContext2D,
+        x: number,
+        y: number,
+        x1: number,
+        y1: number
+    ): void {
         ctx.beginPath();
         ctx.moveTo(x, y);
         ctx.lineTo(x1, y1);
